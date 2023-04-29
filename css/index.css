@@ -1,0 +1,188 @@
+
+:root { 
+--white: #ffffff; 
+--black-1: #202020; 
+--primary: #1b90fc; 
+--grey: #929292; 
+--headline1: 700 2.5rem/normal Roboto Condensed; 
+--subtitle1: 700 1.625rem/1.5rem Roboto Condensed; 
+--button: 700 0.875rem/1rem Roboto; 
+--headline2: 700 1.5rem/normal Roboto Condensed; 
+--body1-regular: 400 1rem/1.5rem Roboto; 
+--body1-bold: 700 1rem/1.5rem Roboto; 
+--body2-bold: 700 0.875rem/1.5rem Roboto; 
+--body2-regular: 400 0.875rem/1.5rem Roboto; 
+--caption-regular: 400 0.75rem/1.5rem Roboto; 
+--caption-bold: 700 0.75rem/1.5rem Roboto; 
+ 
+}
+
+body{
+    margin: 0;
+    font-family: var(--body1-bold);
+    
+}
+
+    .wrapper{
+        max-inline-size: 1664px;
+        margin: auto;
+    }
+    p, h1{
+        margin: 0;
+        color: var(--white);
+    }
+    
+    .hero h1{
+        font-family: var(--headline1);
+        margin-block-start: 23px;
+        margin-block-end: 8px;
+    }
+    
+    .hero p{
+        line-height: 25px;
+        font-family: var(--caption-regular);
+
+    }
+    
+    img{
+        max-inline-size: 100%;
+    }
+
+    .loki-tablet{
+        display: none;
+    }
+    
+    button{
+        margin-block-start: 25px;
+        padding-block: 16px;
+        padding-inline: 33px;
+        color: var(--white);
+        border-radius: 50px;
+        background-color: var(--primary);
+        border: none;
+        cursor: pointer;
+        font-family: var(--button);
+        font-weight: 700;
+        font-size: var(--button);
+        line-height: 16px;
+    }
+    
+    .hero-content{
+        display: flex;
+        block-size: 768px;
+        align-items: center;
+    }
+    
+    .card{
+        max-inline-size: 412px;
+        z-index: 2;
+    }
+   
+    .hero{
+        background-color: var(--black-1);
+        background-image: url(../images/img.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 128px), 0 100%);
+    }
+    
+    .hero::before{
+        content: '';
+        position: absolute;
+        background-color: var(--black-1);
+        inline-size: 50%;
+        display: block;
+        inset-block: 0;
+        z-index: 1;
+        clip-path: polygon(0 0,calc(100% - 151px) 0, 100% 100%  , 0 100%);
+    } 
+    
+
+@media screen and (max-width: 1440px){
+    .card{
+       margin-inline-start: 92px;     
+    }
+
+
+    .hero::before{
+        clip-path: polygon(0 0,calc(100% - 114px) 0, 100% 100%  , 0 100%);
+    }
+
+    
+}
+
+@media screen and (max-width:768px)   {
+    body{
+        font-family: var(--body1-regular);
+    }
+
+    .wrapper{
+        max-inline-size: 768px;
+    }
+
+    .hero{
+        background-image: none;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%);
+    }
+
+    .hero-content{
+       flex-direction: column;
+        block-size: 1024px;
+    }
+
+    .card{
+        max-inline-size: 640px;
+        margin-inline: 64px;
+        margin-block-start: 40px;   
+    }
+
+
+    button{
+        width: 100%;
+    }
+
+    .hero::before{
+        content: none;
+    } 
+    .loki-tablet{
+        display: block;
+    }
+}
+
+@media screen and (max-width:360px) {
+    body{
+        font-family: var(--body2-regular);
+    }
+
+    .hero{
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+    }
+
+
+    .hero h1{
+        font-family: var(--headline2);
+        font-size: 24px;
+    }
+
+    .hero-content{
+        block-size: 640px;
+    }
+
+    .hero p{
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .card{
+        margin-inline: 24px;
+    }
+
+}
+
+
+
+
+
+
+
